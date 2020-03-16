@@ -1,9 +1,7 @@
 FROM jenkins/jnlp-slave:latest
 
 USER root
-
-RUN  apt-get update -y
-RUN  apt-get install nodejs -y
-RUN  apt-get install npm -y 
+RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
+RUN  apt-get install -y nodejs
 
 USER jenkins
